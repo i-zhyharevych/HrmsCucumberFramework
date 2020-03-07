@@ -2,6 +2,8 @@ package com.hrms.utils;
 
 import java.io.File;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
@@ -157,7 +159,7 @@ public class CommonMethods extends PageInitializer {
 		Date date = new Date();
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd_HH:mm:ss");
 		String timeStamp = sdf.format(date.getTime());
-		
+
 		TakesScreenshot ts = (TakesScreenshot) driver;
 
 		byte[] picture = ts.getScreenshotAs(OutputType.BYTES);
@@ -292,6 +294,29 @@ public class CommonMethods extends PageInitializer {
 				break;
 			}
 		}
+	}
+
+	
+	
+	
+	static String jsonFile;
+	/**
+	 * This method will read json files.
+	 * @param fileName
+	 * @return
+	 */
+	public static String readJson(String fileName) {
+		
+		try {
+
+			jsonFile = new String(Files.readAllBytes(Paths.get(fileName)));
+
+		} catch (IOException e) {
+			
+			e.printStackTrace();
+		}
+
+		return jsonFile;
 	}
 
 }

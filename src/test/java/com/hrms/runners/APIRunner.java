@@ -1,0 +1,28 @@
+package com.hrms.runners;
+
+import org.junit.runner.RunWith;
+
+/**
+ * APIRunner class which we have specified path to all feature files in features
+ * and specified path to our API steps practice package
+ * so that we dont execute our hooks which will initialize our WebDriver and open browser
+ */
+
+import cucumber.api.CucumberOptions;
+import cucumber.api.junit.Cucumber;
+
+@RunWith(Cucumber.class)
+@CucumberOptions(
+		features = "src/test/resources/features",
+		glue = {"com.hrms.API.steps.practice"},
+		dryRun = false,
+		plugin= {"pretty"},
+		monochrome=true,
+		tags = {"@SyntaxHRMSAPIEndToEnd1"}
+		//name="Retrieving created Employee using /getOneEmployee.php API"	
+		)
+
+
+public class APIRunner {
+
+}
