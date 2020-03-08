@@ -22,7 +22,7 @@ public class LoginSteps extends CommonMethods {
 	public void i_enter_valid_username_and_valid_password() {
 
 		sendText(login.username, "Admin");
-		sendText(login.password, "Syntax@123");
+		sendText(login.password, "Hum@nhrm123");
 
 	}
 
