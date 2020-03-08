@@ -47,7 +47,7 @@ Feature: Add Employee
     When I click Save
     Then I see required error message next to the first and last name
 
-  @smoke
+  @regression
   Scenario Outline: AddEmployee and Login Credentials
     When I add "Anna", "Maria" and "McGriffin"
     And I click on create login checkbox
@@ -57,4 +57,4 @@ Feature: Add Employee
 
     Examples: 
       | username        |  | password    |  | confirmPassword |
-      | studentStudent4 |  | Syntax@1234 |  | Syntax@1234     |
+      | studentStudent7 |  | Syntax@1234 |  | Syntax@1234     |

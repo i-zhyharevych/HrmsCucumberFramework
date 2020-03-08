@@ -10,7 +10,7 @@ Feature: Login
     Then I successfully logged in
     And I close browser
 
-  @regression
+  @regression @smoke
   Scenario: Invalid Login
     When I enter valid username and invalid password
     And I click on login button
